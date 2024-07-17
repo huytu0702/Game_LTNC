@@ -55,11 +55,15 @@ bool game::init()
 game::game()
 {
 	init();
+	land.init();
+	pipe.init();
 }
 
 game::~game()
 {
 	free();
+	pipe.Free();
+	land.Free();
 	clear();
 }
 

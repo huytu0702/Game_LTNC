@@ -90,3 +90,9 @@ int gTexture::getHeight()
 {
 	return height;
 }
+
+void position::getPos(const int x, const int y)
+{
+	this->x = x;
+	this->y = y;
+}

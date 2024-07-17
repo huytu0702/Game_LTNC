@@ -37,10 +37,21 @@ public:
 
 	static SDL_Window* gWindow;
 	static SDL_Renderer* gRenderer;
-	static SDL_Event event ;
+	static SDL_Event event;
 
 	static const int SCREEN_HEIGHT = 625;
 	static const int SCREEN_WIDTH = 350;
+	static const int LAND_HEIGHT = 140;
+	static const int PIPE_DISTANCE = 222;
+	static const int TOTAL_PIPE = 4;
+	static const short int PIPE_SPACE = 155;
 
 	static bool quit;
+};
+
+class position
+{
+public:
+	int x, y, angle, state;
+	void getPos(const int x, const int y);
 };
