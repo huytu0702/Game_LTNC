@@ -19,6 +19,10 @@ bool pipe::init()
             return true;
         }
     }
+    else
+    {
+        cout << "Error: Can't load pipe!";
+    }
     return false;
 }
 
@@ -36,18 +40,21 @@ void pipe::render()
 
 void pipe::update()
 {
-     for (int i = 0; i < TOTAL_PIPE; i++)
-     {
-         if (posPipe[i].x < -getWidth())
-         {
-            posPipe[i].y = (rand() % (randMax - randMin + 1)) + randMin;
-            posPipe[i].x = posPipe[(i + TOTAL_PIPE - 1) % TOTAL_PIPE].x + PIPE_DISTANCE;
-         }
-         else
-         {
-            posPipe[i].x -= 3;
-         }
-     }
+    if (!die)
+    {
+        for (int i = 0; i < TOTAL_PIPE; i++)
+        {
+            if (posPipe[i].x < -getWidth())
+            {
+                posPipe[i].y = (rand() % (randMax - randMin + 1)) + randMin;
+                posPipe[i].x = posPipe[(i + TOTAL_PIPE - 1) % TOTAL_PIPE].x + PIPE_DISTANCE;
+            }
+            else
+            {
+                posPipe[i].x -= 3;
+            }
+        }
+    }
 }
 
 void pipe::Free()

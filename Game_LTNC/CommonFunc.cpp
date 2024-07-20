@@ -3,11 +3,14 @@
 
 using namespace std;
 
+bool gTexture::quit = false;
+bool gTexture::die = false;
+int gTexture::score = 0;
+
 SDL_Window* gTexture::gWindow = NULL;
 SDL_Renderer* gTexture::gRenderer = NULL;
 SDL_Event gTexture::event;
 
-bool gTexture::quit = false;
 
 gTexture::gTexture() {
 	Texture = NULL;

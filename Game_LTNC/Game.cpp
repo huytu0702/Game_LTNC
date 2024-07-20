@@ -57,13 +57,15 @@ game::game()
 	init();
 	land.init();
 	pipe.init();
+	bird.init();
 }
 
 game::~game()
 {
-	free();
+	bird.Free();
 	pipe.Free();
 	land.Free();
+	free();
 	clear();
 }
 
@@ -90,4 +92,25 @@ void game::renderBackground()
 	image.Load("assets/image/background.png", 1);
 	image.Render(0, 0);
 	image.free();
+}
+
+void game::Input()
+{
+	while (SDL_PollEvent(&event) != 0)
+	{
+		if (event.type == SDL_QUIT)
+		{
+			userInput.Type = input::QUIT;
+			quit = true;
+		}
+		else if (event.type == SDL_MOUSEBUTTONDOWN || (event.type == SDL_KEYDOWN &&
+			(event.key.keysym.sym == SDLK_SPACE || event.key.keysym.sym == SDLK_UP) && event.key.repeat == 0))
+		{
+			userInput.Type = input::PLAY;
+		}
+		else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE && event.key.repeat == 0)
+		{
+			userInput.Type = input::PAUSE;
+		}
+	}
 }
