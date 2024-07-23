@@ -46,4 +46,20 @@ public:
 	{
 		return pipe.height();
 	}
+
+	void resume();
+
+	void pause();
+
+	void renderPauseTab();
+
+	void replay();
+
+	bool checkReplay();
+
+	void Restart();
+
+	void nextButton();
+
+	void renderGameOver();
 };

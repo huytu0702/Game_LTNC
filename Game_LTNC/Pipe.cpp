@@ -19,10 +19,6 @@ bool pipe::init()
             return true;
         }
     }
-    else
-    {
-        cout << "Error: Can't load pipe!";
-    }
     return false;
 }
 

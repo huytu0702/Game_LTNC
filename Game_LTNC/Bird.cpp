@@ -4,7 +4,7 @@
 
 bool bird::init()
 {
-    string bird_path = "assets/image/bird.png";
+    string bird_path = "assets/image/bird2.png";
     posBird.getPos(75, SCREEN_HEIGHT / 2 - 10);
     ahead = 0;  
     angle = 0;
@@ -12,7 +12,7 @@ bool bird::init()
     {
         if (Load(bird_path.c_str(), 1))
         {
-            gSpriteClips[0].x = 0;
+            /*gSpriteClips[0].x = 0;
             gSpriteClips[0].y = 0;
             gSpriteClips[0].w = 60;
             gSpriteClips[0].h = 40;
@@ -27,7 +27,7 @@ bool bird::init()
             gSpriteClips[2].w = 60;
             gSpriteClips[2].h = 40;
 
-            currentFrame = 0; 
+            currentFrame = 0; */
             return true;
         }
         else
@@ -45,8 +45,9 @@ void bird::Free()
 
 void bird::render()
 {
-    SDL_Rect* currentClip = &gSpriteClips[currentFrame];
-    Render(posBird.x, posBird.y, angle, currentClip);
+    /*SDL_Rect* currentClip = &gSpriteClips[currentFrame];
+    Render(posBird.x, posBird.y, angle, currentClip);*/
+    Render(posBird.x, posBird.y, angle);
 }
 
 void bird::updateFrame()
