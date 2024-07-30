@@ -182,3 +182,177 @@ void game::Restart()
 	score = 0;
 	bird.resetTime();
 }
+
+void game::renderScoreSmall()
+{
+	string s = to_string(score);
+	signed char len = s.length();
+	gTexture image;
+
+	for (signed char i = len - 1; i >= 0; i--)
+	{
+		signed char number = s[i] - '0';
+		if (number == 1)
+		{
+			image.Load("assets/number/small/1.png", 0.75);
+		}
+		else if (number == 2)
+		{
+			image.Load("assets/number/small/2.png", 0.75);
+		}
+		else if (number == 3)
+		{
+			image.Load("assets/number/small/3.png", 0.75);
+		}
+		else if (number == 4)
+		{
+			image.Load("assets/number/small/4.png", 0.75);
+		}
+		else if (number == 5)
+		{
+			image.Load("assets/number/small/5.png", 0.75);
+		}
+		else if (number == 6)
+		{
+			image.Load("assets/number/small/6.png", 0.75);
+		}
+		else if (number == 7)
+		{
+			image.Load("assets/number/small/7.png", 0.75);
+		}
+		else if (number == 8)
+		{
+			image.Load("assets/number/small/8.png", 0.75);
+		}
+		else if (number == 9)
+		{
+			image.Load("assets/number/small/9.png", 0.75);
+		}
+		else
+		{
+			image.Load("assets/number/small/0.png", 0.75);
+		}
+		image.Render(260 - image.getWidth() * (len - i - 1) * 0.75 - 5 * (len - i - 1), 268);
+	}
+	image.free();
+}
+
+void game::renderScoreLarge()
+{
+	string s = to_string(score);
+	signed char len = s.length();
+	gTexture image;
+
+	for (signed char i = 0; i < len; i++)
+	{
+		signed char number = s[i] - '0';
+		if (number == 1)
+		{
+			image.Load("assets/number/large/1.png", 1);
+		}
+		else if (number == 2)
+		{
+			image.Load("assets/number/large/2.png", 1);
+		}
+		else if (number == 3)
+		{
+			image.Load("assets/number/large/3.png", 1);
+		}
+		else if (number == 4)
+		{
+			image.Load("assets/number/large/4.png", 1);
+		}
+		else if (number == 5)
+		{
+			image.Load("assets/number/large/5.png", 1);
+		}
+		else if (number == 6)
+		{
+			image.Load("assets/number/large/6.png", 1);
+		}
+		else if (number == 7)
+		{
+			image.Load("assets/number/large/7.png", 1);
+		}
+		else if (number == 8)
+		{
+			image.Load("assets/number/large/8.png", 1);
+		}
+		else if (number == 9)
+		{
+			image.Load("assets/number/large/9.png", 1);
+		}
+		else
+		{
+			image.Load("assets/number/large/0.png", 1);
+		}
+		image.Render((SCREEN_WIDTH - (image.getWidth() * len + (len - 1) * 10)) / 2 + (i + 20) * i, 100);
+	}
+	image.free();
+}
+
+void game::renderBestScore()
+{
+	ifstream fileIn("res/data/bestScore.txt");
+	fileIn >> bestScore;
+	ofstream fileOut("res/data/bestScore.txt", ios::trunc);
+
+	if (score > bestScore)
+	{
+		bestScore = score;
+	}
+	string s = to_string(bestScore);
+	signed char len = s.length();
+	gTexture image;
+
+	for (signed char i = len - 1; i >= 0; i--)
+	{
+		signed char number = s[i] - '0';
+		if (number == 1)
+		{
+			image.Load("assets/number/small/1.png", 0.75);
+		}
+		else if (number == 2)
+		{
+			image.Load("assets/number/small/2.png", 0.75);
+		}
+		else if (number == 3)
+		{
+			image.Load("assets/number/small/3.png", 0.75);
+		}
+		else if (number == 4)
+		{
+			image.Load("assets/number/small/4.png", 0.75);
+		}
+		else if (number == 5)
+		{
+			image.Load("assets/number/small/5.png", 0.75);
+		}
+		else if (number == 6)
+		{
+			image.Load("assets/number/small/6.png", 0.75);
+		}
+		else if (number == 7)
+		{
+			image.Load("assets/number/small/7.png", 0.75);
+		}
+		else if (number == 8)
+		{
+			image.Load("assets/number/small/8.png", 0.75);
+		}
+		else if (number == 9)
+		{
+			image.Load("assets/number/small/9.png", 0.75);
+		}
+		else
+		{
+			image.Load("assets/number/small/0.png", 0.75);
+		}
+		image.Render(260 - image.getWidth() * (len - i - 1) * 0.75 - 5 * (len - i - 1), 315);
+	}
+	image.free();
+
+	fileOut << bestScore;
+	fileIn.close();
+	fileOut.close();
+}

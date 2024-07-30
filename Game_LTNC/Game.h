@@ -3,6 +3,7 @@
 #include "Land.h"
 #include "Pipe.h"
 #include "Bird.h"
+#include <fstream>
 
 class game:gTexture
 {
@@ -62,4 +63,13 @@ public:
 	void nextButton();
 
 	void renderGameOver();
+
+	void renderScoreSmall();
+
+	void renderScoreLarge();
+
+	void renderBestScore();
+
+private:
+	int bestScore;
 };

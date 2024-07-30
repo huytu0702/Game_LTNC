@@ -51,6 +51,8 @@ int main(int argc, char* argv[]) {
                     g.bird.render();
                     g.bird.fall();
                     g.renderGameOver();
+                    g.renderScoreSmall();
+                    g.renderBestScore();
                     g.replay();
                 }
                 else
@@ -90,6 +92,7 @@ int main(int argc, char* argv[]) {
             g.land.render();
             //g.bird.updateFrame();
             g.bird.render();
+            g.renderScoreLarge();
 
             if (!isPause)
             {
@@ -103,6 +106,8 @@ int main(int argc, char* argv[]) {
             {
                 g.resume();
                 g.renderPauseTab();
+                g.renderScoreSmall();
+                g.renderBestScore();
                 g.replay();
                 g.nextButton();
                 if (g.userInput.Type == game::input::PLAY)
