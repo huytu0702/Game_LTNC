@@ -2,6 +2,7 @@
 
 #include "CommonFunc.h"
 #include "Pipe.h"
+#include "Threat.h"
 
 using namespace std;
 
@@ -24,6 +25,8 @@ public:
     void fall();
 
     void update(int pipeWidth, int pipeHeight);
+
+    void updateThreat(int x, int y);
 private:
     string path = "";
     int angle = 0;

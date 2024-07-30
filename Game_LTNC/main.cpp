@@ -43,7 +43,6 @@ int main(int argc, char* argv[]) {
                     g.userInput.Type = game::input::NONE;
                 }
                 g.renderBackground();
-                g.pipe.render();
                 g.land.render();
                 if (isMenu)
                 {
@@ -51,11 +50,15 @@ int main(int argc, char* argv[]) {
                     g.bird.render();
                     g.bird.fall();
                     g.renderGameOver();
+                    g.renderScoreSmall();
+                    g.renderMedal();
+                    g.renderBestScore();
                     g.replay();
                 }
                 else
                 {
                     g.pipe.init();
+                    g.threat.init();
                     g.bird.init();
                     g.bird.render();
                     if (g.userInput.Type == game::input::PLAY)
@@ -69,6 +72,7 @@ int main(int argc, char* argv[]) {
                 g.display();
             }
             g.pipe.init();
+            g.threat.init();
         }
         else
         {
@@ -86,16 +90,20 @@ int main(int argc, char* argv[]) {
                 g.userInput.Type = game::input::NONE;
             }
             g.renderBackground();
+            //g.threat.update();
+            g.threat.render();
             g.pipe.render();
             g.land.render();
             //g.bird.updateFrame();
             g.bird.render();
+            g.renderScoreLarge();
 
             if (!isPause)
             {
-
+                g.bird.updateThreat(g.threat.getPosX(), g.threat.getPosY());
                 g.bird.update(g.getPipeWidth(), g.getPipeHeight());
                 g.pipe.update();
+                g.threat.update();
                 g.land.update();
                 g.pause();
             }
@@ -103,6 +111,8 @@ int main(int argc, char* argv[]) {
             {
                 g.resume();
                 g.renderPauseTab();
+                g.renderScoreSmall();
+                g.renderBestScore();
                 g.replay();
                 g.nextButton();
                 if (g.userInput.Type == game::input::PLAY)

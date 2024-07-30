@@ -47,6 +47,8 @@ public:
 	static const int PIPE_SPACE = 155;
 	static const int BIRD_WIDTH = 60;
 	static const int BIRD_HEIGHT = 40;
+	static const int THREAT_HEIGHT = 50;
+	static const int THREAT_WIDTH = 150;
 
 	static bool quit;
 	static bool die;

@@ -119,3 +119,8 @@ void bird::update(int pipeWidth, int pipeHeight)
         }
     }
 }
+
+void bird::updateThreat(int x, int y)
+{
+    //if (x == posBird.x + getWidth()) die = true;
+}
