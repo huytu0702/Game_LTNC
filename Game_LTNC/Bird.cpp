@@ -5,8 +5,8 @@
 bool bird::init()
 {
     string bird_path = "assets/image/bird2.png";
-    posBird.getPos(75, SCREEN_HEIGHT / 2 - 10);
-    ahead = 0;  
+    posBird.getPos(140, SCREEN_HEIGHT / 2 - 50);
+    ahead = 0;
     angle = 0;
     if (isNULL())
     {

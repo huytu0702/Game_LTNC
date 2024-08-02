@@ -74,6 +74,8 @@ public:
 
 	void renderMedal();
 
+	void renderReady();
+
 private:
 	int bestScore;
 };

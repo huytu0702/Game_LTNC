@@ -47,11 +47,11 @@ void pipe::update()
             }
             else
             {
-                if (score >= 0 && score <= 20)
+                if (score >= 0 && score <= 10)
                 {
                     posPipe[i].x -= 2;
                 }
-                else if (score <= 50)
+                else if (score <= 40)
                 {
                     posPipe[i].x -= 3;
                 }

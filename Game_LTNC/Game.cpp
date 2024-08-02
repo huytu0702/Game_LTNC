@@ -379,3 +379,11 @@ void game::renderMedal()
 
 	image.free();
 }
+
+void game::renderReady()
+{
+	gTexture image;
+	image.Load("assets/image/message.png", 1);
+	image.Render((SCREEN_WIDTH - image.getWidth()) / 2, 180);
+	image.free();
+}

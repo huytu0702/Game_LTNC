@@ -42,14 +42,14 @@ public:
 	static const int SCREEN_HEIGHT = 625;
 	static const int SCREEN_WIDTH = 350;
 	static const int LAND_HEIGHT = 140;
-	static const int PIPE_DISTANCE = 222;
+	static const int PIPE_DISTANCE = 250;
 	static const int TOTAL_PIPE = 4;
-	static const int PIPE_SPACE = 155;
+	static const int PIPE_SPACE = 170;
 	static const int BIRD_WIDTH = 60;
 	static const int BIRD_HEIGHT = 40;
 	static const int THREAT_HEIGHT = 50;
 	static const int THREAT_WIDTH = 150;
-
+		
 	static bool quit;
 	static bool die;
 	static int score;

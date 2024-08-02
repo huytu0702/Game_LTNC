@@ -11,14 +11,14 @@ using namespace std;
 const int FPS = 60;
 const int frameDelay = 1000 / FPS;
 
-
 int main(int argc, char* argv[]) {
-	Uint32 frameStart;
-	int frameTime;
+    Uint32 frameStart;
+    int frameTime;
     game g;
     bool isMenu = 0;
     bool isPause = 0;
     bool isDark = 0;
+    gTexture g2;
 
     while (!g.isQuit())
     {
@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
         if (g.isDie())
         {
             if (isMenu) {
-               // g.bird.updateFrame();
+                // g.bird.updateFrame();
                 g.bird.render();
             }
             g.userInput.Type = game::input::NONE;
@@ -61,6 +61,7 @@ int main(int argc, char* argv[]) {
                     g.threat.init();
                     g.bird.init();
                     g.bird.render();
+                    g.renderReady();
                     if (g.userInput.Type == game::input::PLAY)
                     {
                         g.Restart();
@@ -90,7 +91,7 @@ int main(int argc, char* argv[]) {
                 g.userInput.Type = game::input::NONE;
             }
             g.renderBackground();
-            //g.threat.update();
+            if (g2.score > 20) g.threat.update();
             g.pipe.render();
             g.threat.render();
             g.land.render();
@@ -103,7 +104,7 @@ int main(int argc, char* argv[]) {
                 g.bird.updateThreat(g.threat.getPosX(), g.threat.getPosY());
                 g.bird.update(g.getPipeWidth(), g.getPipeHeight());
                 g.pipe.update();
-                g.threat.update();
+                if (g2.score > 20) g.threat.update();
                 g.land.update();
                 g.pause();
             }
@@ -121,7 +122,7 @@ int main(int argc, char* argv[]) {
                     {
                         isPause = 0;
                     }
-                
+
                     g.userInput.Type = game::input::NONE;
                 }
             }

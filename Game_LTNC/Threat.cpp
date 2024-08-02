@@ -2,7 +2,7 @@
 #include <random>
 
 bool threat::init()
-{
+{   
     pos_x = SCREEN_WIDTH;
     string back_path = "assets/image/penguin.png";
     if (isNULL())
