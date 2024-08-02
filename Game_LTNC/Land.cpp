@@ -41,7 +41,15 @@ void land::render()
 
 void land::update()
 {
-    pLand.x -= 3;
+    if (score >= 0 && score <= 20)
+    {
+        pLand.x -= 2;
+    }
+    else if (score <= 50)
+    {
+        pLand.x -= 3;
+    }
+    else pLand.x -= 4;
 }
 
 void land::Free()

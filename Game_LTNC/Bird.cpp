@@ -10,7 +10,7 @@ bool bird::init()
     angle = 0;
     if (isNULL())
     {
-        if (Load(bird_path.c_str(), 1))
+        if (Load(bird_path.c_str(), 0.75))
         {
             /*gSpriteClips[0].x = 0;
             gSpriteClips[0].y = 0;

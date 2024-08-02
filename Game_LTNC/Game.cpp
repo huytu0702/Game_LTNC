@@ -367,7 +367,7 @@ void game::renderMedal()
 	{
 		image.Load("assets/medal/bronze.png", 0.75);
 	}
-	else if (score > 2 && score < 50)
+	else if (score > 20 && score <= 50)
 	{
 		image.Load("assets/medal/silver.png", 0.75);
 	}

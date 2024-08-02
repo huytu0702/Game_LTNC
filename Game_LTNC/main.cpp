@@ -91,8 +91,8 @@ int main(int argc, char* argv[]) {
             }
             g.renderBackground();
             //g.threat.update();
-            g.threat.render();
             g.pipe.render();
+            g.threat.render();
             g.land.render();
             //g.bird.updateFrame();
             g.bird.render();
