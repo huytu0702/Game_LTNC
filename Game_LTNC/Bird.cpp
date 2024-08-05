@@ -122,5 +122,13 @@ void bird::update(int pipeWidth, int pipeHeight)
 
 void bird::updateThreat(int x, int y)
 {
-    //if (x == posBird.x + getWidth()) die = true;
+    //check va cham threat
+    if (!(posBird.x + getWidth() < x ||
+        posBird.x  > x + THREAT_WIDTH * 0.2 ||
+        posBird.y + getHeight() < y||
+        posBird.y > y + THREAT_HEIGHT * 0.2)
+        )
+    {
+        die = true;
+    }
 }

@@ -35,4 +35,5 @@ private:
     position posBird;
     SDL_Rect gSpriteClips[3];
     int currentFrame;
+    threat t;
 };

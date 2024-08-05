@@ -52,3 +52,4 @@ void threat::update()
         pos_y = dis(gen);
     }
 }
+
