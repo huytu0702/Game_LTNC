@@ -4,6 +4,7 @@
 #include "Pipe.h"
 #include "Bird.h"
 #include "Threat.h"
+#include "Sound.h"
 #include <fstream>
 
 class game:gTexture
@@ -19,6 +20,7 @@ public:
 	pipe pipe;
 	bird bird;
 	threat threat;
+	sound sound;
 
 	game();
 	~game();

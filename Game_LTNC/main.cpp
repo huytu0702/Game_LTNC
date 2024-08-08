@@ -18,6 +18,7 @@ int main(int argc, char* argv[]) {
     bool isMenu = 0;
     bool isPause = 0;
     bool isDark = 0;
+    bool isSound = 1;
     gTexture g2;
 
     while (!g.isQuit())
@@ -28,6 +29,7 @@ int main(int argc, char* argv[]) {
         {
             if (isMenu) {
                 // g.bird.updateFrame();
+                g.sound.playHit();
                 g.bird.render();
             }
             g.userInput.Type = game::input::NONE;
@@ -87,6 +89,7 @@ int main(int argc, char* argv[]) {
 
             if (isPause == 0 && g.userInput.Type == game::input::PLAY)
             {
+                if (isSound) g.sound.playBreath();
                 g.bird.resetTime();
                 g.userInput.Type = game::input::NONE;
             }
@@ -116,11 +119,16 @@ int main(int argc, char* argv[]) {
                 g.renderBestScore();
                 g.replay();
                 g.nextButton();
+                g.sound.renderSound();
                 if (g.userInput.Type == game::input::PLAY)
                 {
                     if (g.checkReplay())
                     {
                         isPause = 0;
+                    }
+                    else if (g.sound.checkSound())
+                    {
+                        isSound = abs(1 - isSound);
                     }
 
                     g.userInput.Type = game::input::NONE;

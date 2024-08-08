@@ -59,6 +59,7 @@ game::game()
 	pipe.init();
 	bird.init();
 	threat.init();
+	sound.init();
 }
 
 game::~game()
@@ -67,6 +68,7 @@ game::~game()
 	pipe.Free();
 	land.Free();
 	threat.Free();
+	sound.Free();
 	free();
 	clear();
 }
