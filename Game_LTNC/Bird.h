@@ -1,8 +1,9 @@
-#pragma once
+﻿#pragma once
 
 #include "CommonFunc.h"
 #include "Pipe.h"
 #include "Threat.h"
+#include "Item.h"
 
 using namespace std;
 
@@ -25,7 +26,6 @@ public:
     void fall();
 
     void update(int pipeWidth, int pipeHeight);
-
     void updateThreat(int x, int y);
 private:
     string path = "";
@@ -36,4 +36,7 @@ private:
     SDL_Rect gSpriteClips[3];
     int currentFrame;
     threat t;
+    bool invincible;
+    Uint32 shieldStartTime;
+    gTexture shieldTexture;
 };

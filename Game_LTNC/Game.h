@@ -5,6 +5,7 @@
 #include "Bird.h"
 #include "Threat.h"
 #include "Sound.h"
+#include "Item.h"
 #include <fstream>
 
 class game:gTexture
@@ -21,6 +22,7 @@ public:
 	bird bird;
 	threat threat;
 	sound sound;
+	Item item;
 
 	game();
 	~game();

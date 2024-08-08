@@ -100,12 +100,14 @@ int main(int argc, char* argv[]) {
             g.land.render();
             //g.bird.updateFrame();
             g.bird.render();
+            g.item.render();
             g.renderScoreLarge();
 
             if (!isPause)
             {
                 g.bird.updateThreat(g.threat.getPosX(), g.threat.getPosY());
                 g.bird.update(g.getPipeWidth(), g.getPipeHeight());
+                g.item.update();
                 g.pipe.update();
                 if (g2.score > 20) g.threat.update();
                 g.land.update();

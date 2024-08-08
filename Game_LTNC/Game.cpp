@@ -60,6 +60,7 @@ game::game()
 	bird.init();
 	threat.init();
 	sound.init();
+	item.init();
 }
 
 game::~game()
@@ -69,6 +70,7 @@ game::~game()
 	land.Free();
 	threat.Free();
 	sound.Free();
+	item.Free();
 	free();
 	clear();
 }
