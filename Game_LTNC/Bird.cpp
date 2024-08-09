@@ -8,6 +8,8 @@ bool bird::init()
     posBird.getPos(140, SCREEN_HEIGHT / 2 - 50);
     ahead = 0;
     angle = 0;
+    string shield_path = "assets/image/shield.png";
+    shield.Load(shield_path.c_str(), 0.2);
     if (isNULL())
     {
         if (Load(bird_path.c_str(), 0.75))
@@ -48,7 +50,17 @@ void bird::render()
     /*SDL_Rect* currentClip = &gSpriteClips[currentFrame];
     Render(posBird.x, posBird.y, angle, currentClip);*/
     Render(posBird.x, posBird.y, angle);
+    if (isInvincible())
+    {
+        renderShield();
+    }
 }
+
+void bird::renderShield()
+{
+    shield.Render(posBird.x - 30, posBird.y - 30);  
+}
+
 
 void bird::updateFrame()
 {
@@ -101,17 +113,20 @@ void bird::update(int pipeWidth, int pipeHeight)
             posBird.y = x0 + time * time * 0.18 - 7.3 * time;
             time++;
         }
-
-        if ((posBird.x + getWidth() > posPipe[ahead].x + 5) && (posBird.x + 5 < posPipe[ahead].x + pipeWidth) &&
-            (posBird.y + 5 < posPipe[ahead].y + pipeHeight || posBird.y + getHeight() > posPipe[ahead].y + pipeHeight + PIPE_SPACE + 5))
+        if (!isInvincible())
         {
-            die = true;
+            if ((posBird.x + getWidth() > posPipe[ahead].x + 5) && (posBird.x + 5 < posPipe[ahead].x + pipeWidth) &&
+                (posBird.y + 5 < posPipe[ahead].y + pipeHeight || posBird.y + getHeight() > posPipe[ahead].y + pipeHeight + PIPE_SPACE + 5))
+            {
+                die = true;
+            }
         }
-        else if (posBird.x > posPipe[ahead].x + pipeWidth)
-        {
-            ahead = (ahead + 1) % TOTAL_PIPE;
-            score++;
-        }
+             if (posBird.x > posPipe[ahead].x + pipeWidth)
+            {
+                ahead = (ahead + 1) % TOTAL_PIPE;
+                score++;
+            }
+        
 
         if (posBird.y > SCREEN_HEIGHT - LAND_HEIGHT - BIRD_HEIGHT - 5 || posBird.y < -10)
         {
@@ -123,12 +138,49 @@ void bird::update(int pipeWidth, int pipeHeight)
 void bird::updateThreat(int x, int y)
 {
     //check va cham threat
-    if (!(posBird.x + getWidth() < x ||
-        posBird.x  > x + THREAT_WIDTH * 0.2 ||
-        posBird.y + getHeight() < y||
-        posBird.y > y + THREAT_HEIGHT * 0.2)
-        )
+        if (!(posBird.x + getWidth() < x ||
+            posBird.x > x + THREAT_WIDTH * 0.2 ||
+            posBird.y + getHeight() < y ||
+            posBird.y > y + THREAT_HEIGHT * 0.2)
+            )
+        {
+            die = true;
+        }
+}
+
+void bird::enableShield()
+{
+    invincible = true;
+    shieldStartTime = SDL_GetTicks(); 
+}
+
+bool bird::isInvincible()
+{
+    if (invincible && SDL_GetTicks() - shieldStartTime >= 5000)
     {
-        die = true;
+        invincible = false;  
     }
+    return invincible;
+}
+
+SDL_Rect bird::getRect()
+{
+    SDL_Rect rect;
+    rect.x = posBird.x;
+    rect.y = posBird.y;
+    rect.w = getWidth();  
+    rect.h = getHeight();
+    return rect;
+}
+
+bool bird::getInvicible() {
+    return invincible;
+}
+
+int bird::getPosBirdX() {
+    return posBird.x;
+}
+
+int bird::getPosBirdY() {
+    return posBird.y;
 }

@@ -59,6 +59,7 @@ int main(int argc, char* argv[]) {
                 }
                 else
                 {
+                    g.item.init();
                     g.pipe.init();
                     g.threat.init();
                     g.bird.init();
@@ -74,6 +75,7 @@ int main(int argc, char* argv[]) {
                 }
                 g.display();
             }
+            g.item.init();
             g.pipe.init();
             g.threat.init();
         }
@@ -109,6 +111,10 @@ int main(int argc, char* argv[]) {
                 g.bird.update(g.getPipeWidth(), g.getPipeHeight());
                 g.item.update();
                 g.pipe.update();
+                if (g.item.checkCollision(g.bird.getRect()))
+                {
+                    g.bird.enableShield(); 
+                }
                 if (g2.score > 20) g.threat.update();
                 g.land.update();
                 g.pause();

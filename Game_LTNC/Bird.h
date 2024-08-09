@@ -26,7 +26,22 @@ public:
     void fall();
 
     void update(int pipeWidth, int pipeHeight);
+
     void updateThreat(int x, int y);
+
+    void enableShield();
+
+    bool isInvincible();
+
+    SDL_Rect getRect();
+
+    bool getInvicible();
+
+    int getPosBirdX();
+
+    int getPosBirdY();
+
+    void renderShield();
 private:
     string path = "";
     int angle = 0;
@@ -38,5 +53,5 @@ private:
     threat t;
     bool invincible;
     Uint32 shieldStartTime;
-    gTexture shieldTexture;
+    gTexture shield;
 };

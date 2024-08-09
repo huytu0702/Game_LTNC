@@ -2,7 +2,13 @@
 
 bool Item::init()
 {
-    posItem.getPos(rand() % (SCREEN_WIDTH - 50), rand() % (SCREEN_HEIGHT - LAND_HEIGHT - 50));  
+    //posItem.getPos(rand() % (SCREEN_WIDTH - 50), rand() % (SCREEN_HEIGHT - LAND_HEIGHT - 50));
+    bird b;
+    if (!b.getInvicible())
+    {
+        posItem.x = 60;
+        posItem.y = 0;
+    }
     active = true;
     std::string item_path = "assets/image/shield.png";  
 
@@ -16,6 +22,7 @@ void Item::Free()
 
 void Item::render()
 {
+    
     if (active)
     {
         Render(posItem.x, posItem.y);
@@ -25,7 +32,7 @@ void Item::render()
 void Item::update()
 {
     posItem.y++;
-    if (posItem.y >= 420) posItem.y = 0;
+    if (score%30 == 0) posItem.y = -120;
 }
 
 bool Item::checkCollision(SDL_Rect birdRect)
