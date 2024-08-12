@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="CommonFunc.cpp" />
+    <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Land.cpp" />
@@ -145,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="Bird.h" />
     <ClInclude Include="CommonFunc.h" />
+    <ClInclude Include="Fruit.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Land.h" />

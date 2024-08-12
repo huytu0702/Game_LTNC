@@ -42,6 +42,8 @@ public:
     int getPosBirdY();
 
     void renderShield();
+
+    bool updateCollect(int x, int y);
 private:
     string path = "";
     int angle = 0;

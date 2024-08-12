@@ -187,3 +187,16 @@ int bird::getPosBirdX() {
 int bird::getPosBirdY() {
     return posBird.y;
 }
+
+bool bird::updateCollect(int x, int y)
+{
+        if (!(posBird.x + getWidth() < x ||
+            posBird.x > x + 32 ||
+            posBird.y + getHeight() < y ||
+            posBird.y > y + 32)
+            )
+        {
+            return true;
+        }
+        return false;
+}

@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     bool isDark = 0;
     bool isSound = 1;
     gTexture g2;
+    int tmp = 0;
 
     while (!g.isQuit())
     {
@@ -63,6 +64,7 @@ int main(int argc, char* argv[]) {
                     g.pipe.init();
                     g.threat.init();
                     g.bird.init();
+                    g.fruit.init(); // new
                     g.bird.render();
                     g.renderReady();
                     if (g.userInput.Type == game::input::PLAY)
@@ -78,6 +80,7 @@ int main(int argc, char* argv[]) {
             g.item.init();
             g.pipe.init();
             g.threat.init();
+            g.fruit.init(); // new
         }
         else
         {
@@ -103,6 +106,7 @@ int main(int argc, char* argv[]) {
             //g.bird.updateFrame();
             g.bird.render();
             g.item.render();
+            g.fruit.render(); // new
             g.renderScoreLarge();
 
             if (!isPause)
@@ -110,13 +114,22 @@ int main(int argc, char* argv[]) {
                 g.bird.updateThreat(g.threat.getPosX(), g.threat.getPosY());
                 g.bird.update(g.getPipeWidth(), g.getPipeHeight());
                 g.item.update();
+                g.fruit.update(); // new
                 g.pipe.update();
+                if (g.bird.updateCollect(g.fruit.getX(), g.fruit.getY()))
+                {
+                    tmp++;
+                    if (tmp % 7 == 0) g2.score += 1;
+                    g.fruit.Free();
+                }
+
                 if (g.item.checkCollision(g.bird.getRect()))
                 {
                     g.bird.enableShield(); 
                 }
                 if (g2.score > 20) g.threat.update();
-                if (g2.score%10 == 0) g.item.init();
+                if (g2.score % 10 == 0) g.item.init();
+                if (g2.score % 20 == 0) g.fruit.init();
                 g.land.update();
                 g.pause();
             }

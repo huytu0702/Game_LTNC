@@ -49,11 +49,11 @@ public:
 	static const int BIRD_HEIGHT = 40;
 	static const int THREAT_HEIGHT = 50;
 	static const int THREAT_WIDTH = 150;
-		
+
 	static bool quit;
 	static bool die;
 	static int score;
-
+	static bool collected;
 	
 };
 

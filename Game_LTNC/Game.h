@@ -7,6 +7,7 @@
 #include "Sound.h"
 #include "Item.h"
 #include <fstream>
+#include "Fruit.h"
 
 class game:gTexture
 {
@@ -23,6 +24,7 @@ public:
 	threat threat;
 	sound sound;
 	Item item;
+	fruit fruit;
 
 	game();
 	~game();
@@ -79,6 +81,7 @@ public:
 	void renderMedal();
 
 	void renderReady();
+
 
 private:
 	int bestScore;

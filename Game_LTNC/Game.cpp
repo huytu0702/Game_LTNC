@@ -61,6 +61,7 @@ game::game()
 	threat.init();
 	sound.init();
 	item.init();
+	fruit.init();
 }
 
 game::~game()
@@ -71,6 +72,7 @@ game::~game()
 	threat.Free();
 	sound.Free();
 	item.Free();
+	fruit.Free();
 	free();
 	clear();
 }
@@ -361,16 +363,19 @@ void game::renderBestScore()
 void game::renderMedal()
 {
 	gTexture image;
-
-	if (score >= 0 && score <= 20)
+	if (score >= 0 && score <= 5)
+	{
+		image.Load("assets/medal/unranked.png", 0.03);
+	}
+	else if (score > 6 && score <= 30)
 	{
 		image.Load("assets/medal/bronze.png", 0.75);
 	}
-	else if (score > 20 && score <= 50)
+	else if (score > 30 && score <= 70)
 	{
 		image.Load("assets/medal/silver.png", 0.75);
 	}
-	else if (score > 50)
+	else if (score > 70)
 	{
 		image.Load("assets/medal/gold.png", 0.75);
 	}
