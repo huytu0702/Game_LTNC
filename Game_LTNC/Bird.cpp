@@ -9,7 +9,7 @@ bool bird::init()
     ahead = 0;
     angle = 0;
     string shield_path = "assets/image/shield.png";
-    shield.Load(shield_path.c_str(), 0.2);
+    shield.Load(shield_path.c_str(), 0.15);
     if (isNULL())
     {
         if (Load(bird_path.c_str(), 0.75))
@@ -58,7 +58,7 @@ void bird::render()
 
 void bird::renderShield()
 {
-    shield.Render(posBird.x - 30, posBird.y - 30);  
+    shield.Render(posBird.x - 17, posBird.y - 22);  
 }
 
 
@@ -138,6 +138,8 @@ void bird::update(int pipeWidth, int pipeHeight)
 void bird::updateThreat(int x, int y)
 {
     //check va cham threat
+    if (!isInvincible())
+    {
         if (!(posBird.x + getWidth() < x ||
             posBird.x > x + THREAT_WIDTH * 0.2 ||
             posBird.y + getHeight() < y ||
@@ -146,6 +148,7 @@ void bird::updateThreat(int x, int y)
         {
             die = true;
         }
+    }
 }
 
 void bird::enableShield()

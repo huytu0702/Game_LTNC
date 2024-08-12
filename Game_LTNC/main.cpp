@@ -116,6 +116,7 @@ int main(int argc, char* argv[]) {
                     g.bird.enableShield(); 
                 }
                 if (g2.score > 20) g.threat.update();
+                if (g2.score%10 == 0) g.item.init();
                 g.land.update();
                 g.pause();
             }

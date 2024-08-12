@@ -147,12 +147,7 @@ void game::renderPauseTab()
 
 void game::nextButton()
 {
-	gTexture image;
-	image.Load("assets/image/nextRight.png", 1);
-	image.Render(149, 322);
-	image.Load("assets/image/nextLeft.png", 1);
-	image.Render(88, 322);
-	image.free();
+	
 }
 
 void game::renderGameOver()
