@@ -80,7 +80,7 @@ Game gồm có 2 vật phẩm Fruit và Khiên sẽ xuất hiện tùy lúc tron
 
 # 4. Các kĩ thuật sử dụng:
 * Sử dụng thư viện SDL2.0
-* Sử dụng nhiều class, vector, tách file, các thao tác với file, ...\
+* Sử dụng nhiều class, vector, tách file, các thao tác với file, ...
 * Sử dụng OOP (Lập trình hướng đối tượng) để quản lý đối tượng trong game.
 * Các hàm check va chạm
 * Tạo ra trọng lực rơi cho con chim
