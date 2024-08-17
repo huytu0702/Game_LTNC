@@ -50,7 +50,6 @@ private:
     int time, x0;
     int ahead = 0;
     position posBird;
-    SDL_Rect gSpriteClips[3];
     int currentFrame;
     threat t;
     bool invincible;

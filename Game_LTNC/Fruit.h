@@ -14,7 +14,6 @@ public:
 	int getX();
 	int getY();
 private:
-	SDL_Rect fruitClips[17];
 	int currentFrame;
 	SDL_Rect fruitRect;
 };
