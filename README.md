@@ -7,7 +7,7 @@ Flappy bird by Tu là một trò chơi thú vị, nơi bạn sẽ điều khiể
 # 0. Cách tải game
 Bước 1: Clone repo hoặc Chọn Code -> Download Zip
 ![image](https://github.com/user-attachments/assets/03b24570-3239-4874-8a8c-b93cc6a1fbce)
-Bước 2: Mở file Game_LTNC.sln bằng Visual Studio
+Bước 2: Mở file Game_LTNC.sln bằng Visual Studio  
 Bước 3: Nhấn chọn Local Windows Debugger để chạy game
 
 # 1. Bắt đầu game:
