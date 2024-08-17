@@ -29,7 +29,6 @@ int main(int argc, char* argv[]) {
         if (g.isDie())
         {
             if (isMenu) {
-                // g.bird.updateFrame();
                 g.sound.playHit();
                 g.bird.render();
             }
@@ -49,7 +48,6 @@ int main(int argc, char* argv[]) {
                 g.land.render();
                 if (isMenu)
                 {
-                    //g.bird.updateFrame();
                     g.bird.render();
                     g.bird.fall();
                     g.renderGameOver();
@@ -64,7 +62,7 @@ int main(int argc, char* argv[]) {
                     g.pipe.init();
                     g.threat.init();
                     g.bird.init();
-                    g.fruit.init(); // new
+                    g.fruit.init(); 
                     g.bird.render();
                     g.renderReady();
                     if (g.userInput.Type == game::input::PLAY)
@@ -80,7 +78,7 @@ int main(int argc, char* argv[]) {
             g.item.init();
             g.pipe.init();
             g.threat.init();
-            g.fruit.init(); // new
+            g.fruit.init(); 
         }
         else
         {
@@ -103,10 +101,9 @@ int main(int argc, char* argv[]) {
             g.pipe.render();
             g.threat.render();
             g.land.render();
-            //g.bird.updateFrame();
             g.bird.render();
             g.item.render();
-            g.fruit.render(); // new
+            g.fruit.render(); 
             g.renderScoreLarge();
 
             if (!isPause)
@@ -114,7 +111,7 @@ int main(int argc, char* argv[]) {
                 g.bird.updateThreat(g.threat.getPosX(), g.threat.getPosY());
                 g.bird.update(g.getPipeWidth(), g.getPipeHeight());
                 g.item.update();
-                g.fruit.update(); // new
+                g.fruit.update(); 
                 g.pipe.update();
                 if (g.bird.updateCollect(g.fruit.getX(), g.fruit.getY()))
                 {

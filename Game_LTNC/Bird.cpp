@@ -14,22 +14,6 @@ bool bird::init()
     {
         if (Load(bird_path.c_str(), 0.75))
         {
-            /*gSpriteClips[0].x = 0;
-            gSpriteClips[0].y = 0;
-            gSpriteClips[0].w = 60;
-            gSpriteClips[0].h = 40;
-
-            gSpriteClips[1].x = 60;
-            gSpriteClips[1].y = 0;
-            gSpriteClips[1].w = 60;
-            gSpriteClips[1].h = 40;
-
-            gSpriteClips[2].x = 120;
-            gSpriteClips[2].y = 0;
-            gSpriteClips[2].w = 60;
-            gSpriteClips[2].h = 40;
-
-            currentFrame = 0; */
             return true;
         }
         else
@@ -47,8 +31,6 @@ void bird::Free()
 
 void bird::render()
 {
-    /*SDL_Rect* currentClip = &gSpriteClips[currentFrame];
-    Render(posBird.x, posBird.y, angle, currentClip);*/
     Render(posBird.x, posBird.y, angle);
     if (isInvincible())
     {
