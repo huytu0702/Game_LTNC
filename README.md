@@ -1,12 +1,14 @@
 
 # FLAPPY BIRD BY TU
-Demo game và cấu trúc code:
+Demo game và cấu trúc code: https://s.net.vn/hzvM
 ## Giới thiệu game
 Flappy bird by Tu là một trò chơi thú vị, nơi bạn sẽ điều khiển nhân vật Bird để vượt qua các chướng ngại vật, ăn vật phẩm, đạt điểm số và mức rank cao nhất có thể. Trò chơi này yêu cầu sự nhanh nhẹn và khéo léo để né tránh các ống cản đường, thu thập khiên bảo vệ và hoa quả tăng điểm. Hãy thử thách khả năng của bạn và xem bạn có thể ghi được bao nhiêu điểm!
 
 # 0. Cách tải game
-## Cách 1:
-## Cách 2:
+Bước 1: Clone repo hoặc Chọn Code -> Download Zip
+![image](https://github.com/user-attachments/assets/03b24570-3239-4874-8a8c-b93cc6a1fbce)
+Bước 2: Mở file Game_LTNC.sln bằng Visual Studio
+Bước 3: Nhấn chọn Local Windows Debugger để chạy game
 
 # 1. Bắt đầu game:
 ![Screenshot 2024-08-13 153945](https://github.com/user-attachments/assets/f337329d-78a2-43ac-bbc3-23d46d641f12)
@@ -63,6 +65,12 @@ Game gồm có 2 vật phẩm Fruit và Khiên sẽ xuất hiện tùy lúc tron
 |6-30|     Bronze         |        ![bronze](https://github.com/user-attachments/assets/08a55635-9a35-4b0e-b54f-95ef34947813)      |
 |31-70|     Silver         |    ![silver](https://github.com/user-attachments/assets/671b94c6-638f-449c-b6bc-0364dcf0ca1c)|
 |>70|     Gold        |   ![gold](https://github.com/user-attachments/assets/6107d9b8-ac17-4dc8-af8b-2a865f0933ba)|
+## Các điểm phát triển thêm so với game gốc:
+* Vật phẩm khiên: Nhân vật ăn khiên bất tử trong 2s
+* Vật phẩm fruit (dâu tây): Nhân vật ăn dâu tây tăng một số điểm bất kì
+* Chướng ngại vật chim: Khi đạt 20 điểm, bạn sẽ cần né thêm cả chướng ngại vật chim đi từ bên phải màn hình qua
+* Tăng độ khó: Khi đạt mức 11 điểm và 41, các cột sẽ di chuyển nhanh hơn
+* Hệ thống rank: Hệ thống xếp loại tùy theo mức điểm đạt được
 
 ## Một số hình ảnh khi chơi game:
 ![Screenshot 2024-08-13 170106](https://github.com/user-attachments/assets/50bb1653-2abd-49e0-bee7-172696d0aa3a)
@@ -83,7 +91,7 @@ Game gồm có 2 vật phẩm Fruit và Khiên sẽ xuất hiện tùy lúc tron
 * Tham khảo cách tách file và cách load hình ảnh và map trên Phát Triển Phần Mềm 123A-Z https://www.youtube.com/@PhatTrienPhanMem123AZ
 * Tham khảo về sử dụng SDL trên trang lazyfoo https://lazyfoo.net/tutorials/SDL/
 * Hình ảnh, âm thanh được sưu tầm và chủ yếu lấy từ web https://itch.io/game-assets/free
-
+* Tham khảo các bước làm game Flappy bird trên https://www.youtube.com/channel/UC2Ab_b49frkmgFJajOvtkpw
 # 6. Hướng phát triển:
 * Tối ưu hóa game hơn
 * Tạo thêm nhiều vật phẩm
