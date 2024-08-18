@@ -1,6 +1,6 @@
 
 # FLAPPY BIRD BY TU
-Demo game và cấu trúc code: https://s.net.vn/hzvM
+Demo game và cấu trúc code: https://drive.google.com/file/d/1dY7Y-bK-kM7ZpZTnx3gkEw9pSWTbU_pW/view?usp=sharing
 ## Giới thiệu game
 Flappy bird by Tu là một trò chơi thú vị, nơi bạn sẽ điều khiển nhân vật Bird để vượt qua các chướng ngại vật, ăn vật phẩm, đạt điểm số và mức rank cao nhất có thể. Trò chơi này yêu cầu sự nhanh nhẹn và khéo léo để né tránh các ống cản đường, thu thập khiên bảo vệ và hoa quả tăng điểm. Hãy thử thách khả năng của bạn và xem bạn có thể ghi được bao nhiêu điểm!
 
